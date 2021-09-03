@@ -11,7 +11,7 @@ const Navbar = (props) => {
           <Link to="/job">Job</Link>
         </li>
         <li>
-          <Link to="/job2">Job2</Link>
+          <Link to="/footer">Footer</Link>
         </li>
       </ul>
     </div>

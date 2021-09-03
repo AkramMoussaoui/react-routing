@@ -1,20 +1,20 @@
-import React from "react";
 import { useHistory } from "react-router-dom";
 
-const Footer = () => {
+const Component1 = () => {
   const history = useHistory();
   return (
     <div>
-      <div>Footer page</div>
+      <div>Component1</div>
       <button
         onClick={() => {
-          history.push("/job/8");
+          alert("You are redirected");
+          history.push("/component3");
         }}
       >
-        Go back
+        click
       </button>
     </div>
   );
 };
 
-export default Footer;
+export default Component1;

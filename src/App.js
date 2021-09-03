@@ -1,19 +1,27 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Header, Navbar, Job, Footer } from "./components";
+import { useSelector, useDispatch } from "react-redux";
+import actions from "./actions/counter";
+
 const App = () => {
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   return (
-    <Router>
-      <Navbar />
-      <Route exact path="/" component={Header} />
-
-      <Route path="/job">
-        <Job />
-      </Route>
-
-      <Route path="/job2">
-        <Footer />
-      </Route>
-    </Router>
+    <div>
+      <button
+        onClick={() => {
+          dispatch(actions.incrementCounter);
+        }}
+      >
+        +
+      </button>
+      <span>{counter}</span>
+      <button
+        onClick={() => {
+          dispatch(actions.decrementCounter);
+        }}
+      >
+        -
+      </button>
+    </div>
   );
 };
 
